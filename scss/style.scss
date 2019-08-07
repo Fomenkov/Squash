@@ -28,6 +28,9 @@ $outline-test-color: red;
   from {
     width: 0;
   }
+/*  10% {width: 10%;}
+  20% {width: 20%;}
+  90% {width: 90%;}*/
   to {
     width: 100%;
   }
@@ -50,7 +53,7 @@ html, body {
   padding-right: $padding-site;
 }
 
-.wrapper {
+.container {
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -60,24 +63,34 @@ html, body {
   flex: 1;
 }
 
-.container {
-  // --- temporary --- //
-  //outline: 1px solid $outline-test-color;
-  // --- / temporary --- //
-  margin: 0 auto;
-  max-width: $site-width;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.page-title {
+  text-align: center;
+  margin-bottom: 60px;
 }
+
+.main {
+  max-width: $site-width;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+// --- / global styles --- //
 
 .header {
   width: 100%;
-  box-sizing: border-box;
+
 
   padding-top: 20px;
   padding-bottom: 20px;
   //outline: 1px solid $outline-test-color;
+  &__wrapper {
+    max-width: $site-width;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__logo {
     margin-right: 100px;
   }
@@ -141,16 +154,20 @@ html, body {
   }
 }
 
-.main {
-  min-height: 100%;
-}
-
 .footer {
   color: $footer-text-color;
   background-color: $footer-bg-color;
   font-size: 14px;
   padding-top: 20px;
   padding-bottom: 20px;
+  &__wrapper {
+    max-width: $site-width;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__slogan {
 
   }
@@ -177,3 +194,40 @@ html, body {
   }
 }
 
+// --- trainer page --- //
+.trainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  &__photo {
+    max-width: 100%;
+    height: auto;
+    margin-right: 40px;
+  }
+  &__info {
+    max-width: 600px;
+  }
+  &__name {
+    position: relative;
+    display: inline-block;
+
+  }
+  &__name::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    height: 5px;
+    display: block;
+    background-color: $logo-second-color;
+    animation: crawl-from-left linear 1.2s;
+  }
+  &__rank {
+    display: block;
+    margin-bottom: 40px;
+  }
+}
+
+// --- / trainer page --- //
