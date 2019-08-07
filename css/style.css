@@ -288,20 +288,31 @@ template, [hidden] {
 * {
   font-family: 'Comfortaa', Arial, cursive; }
 
+html, body {
+  height: 100%; }
+
 .padding-site {
   padding-left: 80px;
   padding-right: 80px; }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; }
+
+.content {
+  flex: 1; }
+
 .container {
-  outline: 1px solid red;
-  height: 100vh;
   margin: 0 auto;
-  width: 1200px; }
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 
 .header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  box-sizing: border-box;
   padding-top: 20px;
   padding-bottom: 20px; }
   .header__logo {
@@ -353,3 +364,29 @@ template, [hidden] {
       height: 5px;
       display: block;
       background-color: #fbb040; }
+
+.main {
+  min-height: 100%; }
+
+.footer {
+  color: #ffffff;
+  background-color: #262262;
+  font-size: 14px;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  .footer__slogan-logo {
+    width: 500px;
+    height: auto; }
+  .footer__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px; }
+  .footer__club-name {
+    font-weight: 700; }
+  .footer__phone {
+    color: #ffffff;
+    text-decoration: none; }
+  .footer__sponsor-logo {
+    width: 250px;
+    height: auto; }

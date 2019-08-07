@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700&display=swap&subset=cyrillic');
 @import "normalize";
 
-
 // --- variables --- //
 $site-width: 1200px;
 $padding-site: 80px;
@@ -17,15 +16,23 @@ $menu-color: $logo-base-color;
 $menu-hover-color: lighten($menu-color, 40);
 $menu-active-color: darken($menu-color, 40);
 
+$footer-bg-color: $logo-base-color;
+$footer-text-color: #ffffff;
+
 $outline-test-color: red;
 // --- / color -- //
 // --- / variables --- //
 
 // --- animations --- //
 @keyframes crawl-from-left {
-  from {width: 0;}
-  to {width: 100%;}
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
+
 // --- / animations --- //
 
 // --- global styles --- //
@@ -34,24 +41,40 @@ $outline-test-color: red;
   font-family: 'Comfortaa', Arial, cursive;
 }
 
+html, body {
+  height: 100%;
+}
+
 .padding-site {
   padding-left: $padding-site;
   padding-right: $padding-site;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.content {
+  flex: 1;
+}
+
 .container {
   // --- temporary --- //
-  outline: 1px solid $outline-test-color;
-  height: 100vh;
+  //outline: 1px solid $outline-test-color;
   // --- / temporary --- //
   margin: 0 auto;
-  width: $site-width;
+  max-width: $site-width;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  box-sizing: border-box;
+
   padding-top: 20px;
   padding-bottom: 20px;
   //outline: 1px solid $outline-test-color;
@@ -119,10 +142,38 @@ $outline-test-color: red;
 }
 
 .main {
-
+  min-height: 100%;
 }
 
 .footer {
+  color: $footer-text-color;
+  background-color: $footer-bg-color;
+  font-size: 14px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  &__slogan {
 
+  }
+  &__slogan-logo {
+    width: 500px;
+    height: auto;
+  }
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+  }
+  &__club-name {
+    font-weight: 700;
+  }
+  &__phone {
+    color: $footer-text-color;
+    text-decoration: none;
+  }
+  &__sponsor-logo {
+    width: 250px;
+    height: auto;
+  }
 }
 
