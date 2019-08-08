@@ -536,3 +536,36 @@ html, body {
     line-height: 18px; }
   .service-card__button--booking {
     margin-bottom: 20px; }
+
+.price {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 0 auto; }
+  .price__wrapper-outside {
+    border-top: 20px solid #fbb040;
+    margin-bottom: 20px; }
+  .price__row {
+    border-bottom: 1px solid #262262; }
+    .price__row:hover {
+      background-color: #feeed6; }
+  .price__cell {
+    padding: 10px 20px; }
+    .price__cell--table-header {
+      text-align: left; }
+  .price__days {
+    display: block;
+    margin-bottom: 5px; }
+  .price__time {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 14px; }
+
+.price-sale {
+  border-top: 20px solid #fbb040;
+  margin-bottom: 20px; }
+  .price-sale__wrapper {
+    width: 90%;
+    margin: 0 auto; }
+  .price-sale__title {
+    color: red; }
