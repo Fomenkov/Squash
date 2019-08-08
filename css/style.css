@@ -283,8 +283,8 @@ template, [hidden] {
   from {
     width: 0; }
   /*  10% {width: 10%;}
-  20% {width: 20%;}
-  90% {width: 90%;}*/
+    20% {width: 20%;}
+    90% {width: 90%;}*/
   to {
     width: 100%; } }
 
@@ -308,12 +308,48 @@ html, body {
 
 .page-title {
   text-align: center;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  position: relative;
+  display: inline-block; }
 
 .main {
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box; }
+
+.button {
+  font-size: 14px;
+  line-height: 18px;
+  color: #fbb040;
+  background-color: #262262;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 10px 25px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px #607D8B; }
+  .button:hover, .button:focus {
+    background-color: #fbb040;
+    color: #262262;
+    box-shadow: 0 2px 5px #607D8B; }
+  .button:active {
+    background-color: #ffffff;
+    transform: translateY(2px);
+    box-shadow: none;
+    outline: 1px solid #fbb040; }
+
+.crawl-from-left::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  height: 5px;
+  display: block;
+  background-color: #fbb040;
+  animation: crawl-from-left linear 1.2s; }
 
 .header {
   width: 100%;
@@ -411,7 +447,17 @@ html, body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  /*&__name::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    height: 5px;
+    display: block;
+    background-color: $logo-second-color;
+    animation: crawl-from-left linear 1.2s;
+  }*/ }
   .trainer__photo {
     max-width: 100%;
     height: auto;
@@ -421,15 +467,66 @@ html, body {
   .trainer__name {
     position: relative;
     display: inline-block; }
-  .trainer__name::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    width: 100%;
-    height: 5px;
-    display: block;
-    background-color: #fbb040;
-    animation: crawl-from-left linear 1.2s; }
   .trainer__rank {
     display: block;
     margin-bottom: 40px; }
+
+.services__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 20px 0;
+  list-style: none; }
+
+.service-card {
+  position: relative;
+  margin-bottom: 40px;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+  transition: box-shadow 0.5s;
+  overflow: hidden; }
+  .service-card:hover {
+    box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5); }
+  .service-card__hover {
+    padding: 40px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    background-color: #fbb040;
+    opacity: 0;
+    width: 440px;
+    height: 320px;
+    transition: opacity 1.5s; }
+    .service-card__hover-title {
+      display: block;
+      margin-bottom: 10px;
+      text-align: center; }
+    .service-card__hover-list {
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto; }
+    .service-card__hover-comment {
+      text-align: center; }
+  .service-card:hover .service-card__hover {
+    opacity: 0.9; }
+  .service-card__title {
+    color: #262262;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center; }
+  .service-card__comment {
+    margin-bottom: 20px;
+    color: #a9a9a9;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 18px; }
+  .service-card__button--booking {
+    margin-bottom: 20px; }
