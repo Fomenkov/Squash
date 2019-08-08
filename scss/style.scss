@@ -92,6 +92,7 @@ html, body {
   border-radius: 3px;
   box-sizing: border-box;
   box-shadow: 0 2px 5px $button-shadow-color;
+  transition: 0.7s;
   &:hover,
   &:focus {
     background-color: $logo-second-color;
@@ -239,38 +240,41 @@ html, body {
 
 // --- trainer page --- //
 .trainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-bottom: 40px;
-  padding-top: 40px;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
   &__photo {
     max-width: 100%;
     height: auto;
     margin-right: 40px;
   }
   &__info {
-    max-width: 600px;
+    max-width: 650px;
   }
   &__name {
     position: relative;
     display: inline-block;
 
   }
-  /*&__name::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    width: 100%;
-    height: 5px;
-    display: block;
-    background-color: $logo-second-color;
-    animation: crawl-from-left linear 1.2s;
-  }*/
   &__rank {
     display: block;
     margin-bottom: 40px;
+  }
+  &__text {
+    line-height: 26px;
+  }
+  &__button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    display: flex;
+    width: 200px;
   }
 }
 
