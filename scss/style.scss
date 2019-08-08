@@ -255,6 +255,7 @@ html, body {
     max-width: 100%;
     height: auto;
     margin-right: 40px;
+    border-radius: 20px;
   }
   &__info {
     max-width: 650px;
@@ -311,7 +312,22 @@ html, body {
   background-color: #ffffff;
   transition: box-shadow 0.5s;
   overflow: hidden;
-
+  &--action {
+    &::after {
+      color: #FFFFFF;
+      content: "Акция";
+      width: 130px;
+      height: 30px;
+      display: flex;
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      background-color: #ee3643;
+      transform: rotate(45deg);
+      justify-content: center;
+      align-items: center;
+    }
+  }
   &:hover {
     box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
   }
