@@ -88,8 +88,25 @@
                 </nav>
             </div>
         </header>
-        <main class="main">
-
+        <main class="main main--feedback-page padding-site">
+            <form action="https://htmlacademy.ru/echo" class="feedback">
+                <div class="feedback__contacts">
+                    <h2 class="feedback__title feedback__title--contacts">Контакты:</h2>
+                    <b>Гольф-клуб "Крылатское"</b><br><br>
+                    <p>г. Москва. ул. Островная, д. 2</p>
+                    <p>+7 (916) 356-33-77 - тренер</p>
+                    <p>+7 (495) 234-74-51 - пропуск</p>
+                    <p>vadimendeavour@gmail.com</p>
+                </div>
+                <fieldset class="feedback__write-us">
+                    <h2 class="feedback__title feedback__title--write-us">Напишите мне:</h2>
+                    <input class="feedback__input feedback__input--client-name" type="text" placeholder="Имя" name="client-name" required>
+                    <input class="feedback__input feedback__input--client-email" type="email" placeholder="E-mail" name="client-email" required>
+                    <textarea class="feedback__input feedback__input--client-message" placeholder="Ваше сообщение" name="client-message"  id="" rows="5" required></textarea>
+                    <button class="button button--feedback feedback__button" type="submit">Отправить</button>
+                    <button class="button button--map feedback__button" type="button">Показать карту</button>
+                </fieldset>
+            </form>
         </main>
     </div>
     <footer class="footer">

@@ -5,6 +5,8 @@
 $site-width: 1200px;
 $padding-site: 80px;
 
+$test-box-width: ($site-width - ($padding-site * 2)) * 0.425;
+
 // --- color -- //
 $logo-base-color: #262262;
 $logo-second-color: #fbb040;
@@ -17,6 +19,7 @@ $menu-hover-color: lighten($menu-color, 40);
 $menu-active-color: darken($menu-color, 40);
 
 $price-hover-color: lighten($logo-second-color, 30);
+$shadow-color: $logo-base-color;
 
 $footer-bg-color: $logo-base-color;
 $footer-text-color: #ffffff;
@@ -31,12 +34,11 @@ $outline-test-color: red;
 @keyframes crawl-from-left {
   from {
     width: 0;
+    background-color: $logo-base-color;
   }
-  /*  10% {width: 10%;}
-    20% {width: 20%;}
-    90% {width: 90%;}*/
   to {
     width: 100%;
+    background-color: $logo-second-color;
   }
 }
 
@@ -78,6 +80,10 @@ html, body {
   max-width: $site-width;
   margin: 0 auto;
   box-sizing: border-box;
+  &--feedback-page {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .button {
@@ -107,6 +113,13 @@ html, body {
     box-shadow: none;
     outline: 1px solid $logo-second-color;
 
+  }
+  &--feedback {
+    border: none;
+    margin-right: 20px;
+  }
+  &--map {
+    border: none;
   }
 }
 
@@ -200,6 +213,45 @@ html, body {
   }
 }
 
+.index {
+  &__headline {
+    font-size: 40px;
+    color: $logo-base-color;
+    text-align: center;
+  }
+  &__img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.test {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  &__box {
+    background-color: $logo-base-color;
+    width: $test-box-width;
+    height: $test-box-width;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    &--center {
+      box-sizing: border-box;
+      position: absolute;
+      top: $test-box-width / 2 + 10px;
+      left: $test-box-width * 2 / 3 - 5px;
+      background-color: $logo-second-color;
+      transform: rotate(45deg);
+      overflow: hidden;
+    }
+    &:not(&--center):hover {
+      background-color: #837ed2;
+    }
+  }
+}
+
 .footer {
   color: $footer-text-color;
   background-color: $footer-bg-color;
@@ -242,7 +294,6 @@ html, body {
 
 // --- trainer page --- //
 .trainer {
-
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -255,7 +306,12 @@ html, body {
     max-width: 100%;
     height: auto;
     margin-right: 40px;
-    border-radius: 20px;
+    border-radius: 10px;
+    transition: 1.5s;
+    &:hover {
+      box-shadow: 0 10px 25px $shadow-color;
+      transform: scale(1.2);
+    }
   }
   &__info {
     max-width: 650px;
@@ -263,6 +319,7 @@ html, body {
   &__name {
     position: relative;
     display: inline-block;
+    margin-top: 0;
 
   }
   &__rank {
@@ -316,6 +373,7 @@ html, body {
     &::after {
       color: #FFFFFF;
       content: "Акция";
+      letter-spacing: 2px;
       width: 130px;
       height: 30px;
       display: flex;
@@ -329,7 +387,7 @@ html, body {
     }
   }
   &:hover {
-    box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
+    box-shadow: 0 10px 25px $shadow-color;
   }
 
   &__image {
@@ -402,7 +460,7 @@ html, body {
     &--table-title {
 
     }
-    &:hover {
+    &:not(&--table-title):hover {
       background-color: $price-hover-color;
     }
   }
@@ -438,3 +496,54 @@ html, body {
 }
 
 // --- / price page --- //
+
+// --- feedback page --- //
+.feedback {
+  margin: 0 auto;
+  padding: 40px;
+  width: 90%;
+  box-sizing: border-box;
+  //height: 500px;
+  display: flex;
+  justify-content: space-between;
+  transition: 1.5s;
+  &:hover {
+    box-shadow: 0 10px 25px $shadow-color;
+    //outline: 1px solid #eaeaea;
+  }
+  &__contacts {
+    position: relative;
+    //left: -100px;
+    width: 45%;
+    //height: 90%;
+    outline: 1px solid #837ed2;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background-color: $logo-base-color;
+    color: $logo-second-color;
+  }
+  &__title {
+    margin-bottom: 40px;
+  }
+  &__write-us {
+    width: 50%;
+    height: 90%;
+    padding: 20px 40px 0 40px;
+    box-sizing: border-box;
+    border: none;
+  }
+  &__input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    &--client-message {
+      height: 100px;
+      resize: none;
+    }
+  }
+}
+
+
+// --- / feedback page --- //
