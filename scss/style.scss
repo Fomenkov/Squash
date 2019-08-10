@@ -1,4 +1,46 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700&display=swap&subset=cyrillic');
+@font-face {
+  font-family: 'comfortaa';
+  src: url('../fonts/comfortaa-bold-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'comfortaa';
+  src: url('../fonts/comfortaa-light-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'comfortaa';
+  src: url('../fonts/comfortaa-medium-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'comfortaa';
+  src: url('../fonts/comfortaa-regular-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'comfortaa';
+  src: url('../fonts/comfortaa-semibold-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'comfortaa';
+  src: url('../fonts/comfortaa-variablefont_wght-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 @import "normalize";
 
 // --- variables --- //
@@ -100,12 +142,12 @@ html, body {
   border-radius: 3px;
   box-sizing: border-box;
   box-shadow: 0 2px 5px $button-shadow-color;
-  transition: 0.7s;
   &:hover,
   &:focus {
     background-color: $logo-second-color;
     color: $logo-base-color;
     box-shadow: 0 2px 5px $button-shadow-color;
+    transition: 0.7s;
   }
   &:active {
     background-color: #ffffff;
@@ -408,7 +450,7 @@ html, body {
     opacity: 0;
     width: 440px;
     height: 320px;
-    transition: opacity 1.5s;
+
     &-title {
       display: block;
       margin-bottom: 10px;
@@ -425,6 +467,7 @@ html, body {
   }
   &:hover .service-card__hover {
     opacity: 0.9;
+    transition: opacity 1.5s;
   }
 
   &__title {
@@ -511,7 +554,7 @@ html, body {
   //height: 500px;
   display: flex;
   justify-content: space-between;
-  transition: 1.5s;
+  transition: box-shadow 1.5s;
   &:hover {
     box-shadow: 0 10px 25px $shadow-color;
     //outline: 1px solid #eaeaea;
@@ -526,7 +569,7 @@ html, body {
     box-sizing: border-box;
     background-color: $logo-base-color;
     color: $logo-second-color;
-    transition: 1.5s;
+    transition: box-shadow 1.5s;
     &:hover {
       //background-color: white;
       box-shadow: 0 0 15px $logo-base-color;

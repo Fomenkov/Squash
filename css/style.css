@@ -1,5 +1,40 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Comfortaa:400,700&display=swap&subset=cyrillic");
+@font-face {
+  font-family: 'comfortaa';
+  src: url("../fonts/comfortaa-bold-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'comfortaa';
+  src: url("../fonts/comfortaa-light-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'comfortaa';
+  src: url("../fonts/comfortaa-medium-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'comfortaa';
+  src: url("../fonts/comfortaa-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'comfortaa';
+  src: url("../fonts/comfortaa-semibold-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'comfortaa';
+  src: url("../fonts/comfortaa-variablefont_wght-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -333,12 +368,12 @@ html, body {
   padding: 10px 25px;
   border-radius: 3px;
   box-sizing: border-box;
-  box-shadow: 0 2px 5px #607D8B;
-  transition: 0.7s; }
+  box-shadow: 0 2px 5px #607D8B; }
   .button:hover, .button:focus {
     background-color: #fbb040;
     color: #262262;
-    box-shadow: 0 2px 5px #607D8B; }
+    box-shadow: 0 2px 5px #607D8B;
+    transition: 0.7s; }
   .button:active {
     background-color: #ffffff;
     transform: translateY(2px);
@@ -571,8 +606,7 @@ html, body {
     background-color: #fbb040;
     opacity: 0;
     width: 440px;
-    height: 320px;
-    transition: opacity 1.5s; }
+    height: 320px; }
     .service-card__hover-title {
       display: block;
       margin-bottom: 10px;
@@ -584,7 +618,8 @@ html, body {
     .service-card__hover-comment {
       text-align: center; }
   .service-card:hover .service-card__hover {
-    opacity: 0.9; }
+    opacity: 0.9;
+    transition: opacity 1.5s; }
   .service-card__title {
     color: #262262;
     font-size: 26px;
@@ -640,7 +675,7 @@ html, body {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  transition: 1.5s; }
+  transition: box-shadow 1.5s; }
   .feedback:hover {
     box-shadow: 0 10px 25px #262262; }
   .feedback__contacts-box {
@@ -651,7 +686,7 @@ html, body {
     box-sizing: border-box;
     background-color: #262262;
     color: #fbb040;
-    transition: 1.5s; }
+    transition: box-shadow 1.5s; }
     .feedback__contacts-box:hover {
       box-shadow: 0 0 15px #262262; }
   .feedback__title {
