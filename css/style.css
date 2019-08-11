@@ -323,6 +323,20 @@ template, [hidden] {
     width: 100%;
     background-color: #fbb040; } }
 
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden; }
+
 * {
   font-family: 'Comfortaa', Arial, cursive; }
 
@@ -373,7 +387,8 @@ html, body {
     background-color: #fbb040;
     color: #262262;
     box-shadow: 0 2px 5px #607D8B;
-    transition: 0.7s; }
+    transition: 0.7s;
+    cursor: pointer; }
   .button:active {
     background-color: #ffffff;
     transform: translateY(2px);
@@ -384,6 +399,14 @@ html, body {
     margin-right: 20px; }
   .button--map {
     border: none; }
+  .button--calendar {
+    margin: 100px auto;
+    display: block;
+    width: 200px;
+    text-align: center; }
+  .button--reservation {
+    border: none;
+    width: 100%; }
 
 .crawl-from-left::after {
   content: "";
@@ -702,7 +725,9 @@ html, body {
     padding-left: 45px;
     margin: 15px 0;
     position: relative;
-    min-height: 30px; }
+    min-height: 30px;
+    color: inherit;
+    text-decoration: none; }
     .feedback__contact::before {
       content: "";
       display: block;
@@ -713,26 +738,21 @@ html, body {
       background-position-x: center;
       background-position-y: center;
       background-repeat: no-repeat; }
+    .feedback__contact--address__link {
+      color: inherit;
+      text-decoration: none; }
     .feedback__contact--address::before {
       background-image: url("../img/icon-address.svg");
       background-size: 15px; }
-    .feedback__contact--phone-trainer {
-      color: inherit;
-      text-decoration: none; }
-      .feedback__contact--phone-trainer::before {
-        background-image: url("../img/icon-trainer.svg");
-        background-size: 25px; }
-    .feedback__contact--phone-pass {
-      color: inherit;
-      text-decoration: none; }
-      .feedback__contact--phone-pass::before {
-        background-image: url("../img/icon-pass.svg");
-        background-size: 25px; }
-    .feedback__contact--email {
-      color: inherit; }
-      .feedback__contact--email::before {
-        background-image: url("../img/icon-email.svg");
-        background-size: 20px; }
+    .feedback__contact--phone-trainer::before {
+      background-image: url("../img/icon-trainer.svg");
+      background-size: 25px; }
+    .feedback__contact--phone-pass::before {
+      background-image: url("../img/icon-pass.svg");
+      background-size: 25px; }
+    .feedback__contact--email::before {
+      background-image: url("../img/icon-email.svg");
+      background-size: 20px; }
   .feedback__write-us {
     width: 50%;
     height: 90%;
@@ -784,3 +804,183 @@ html, body {
       transform: scale(1.05); }
   .social__icon {
     width: 30px; }
+
+.calendar {
+  padding: 20px; }
+
+/* === services === */
+.appointment {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 40px; }
+  .appointment__title {
+    margin: 0 0 30px 0;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px; }
+  .appointment__description {
+    line-height: 34px;
+    margin-bottom: 40px; }
+  .appointment__radio {
+    position: absolute; }
+
+/* === appointment__tabs ===*/
+.tabs {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0; }
+  .tabs__button {
+    padding: 10px 25px;
+    margin: 0 20px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    min-height: 38px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #262262;
+    color: #fbb040; }
+    .tabs__button:hover, .tabs__button:focus {
+      cursor: pointer;
+      background-color: #fbb040;
+      color: #262262;
+      box-shadow: 0 2px 5px #607D8B;
+      transition: 0.7s; }
+    .tabs__button:active {
+      background-color: #ffffff;
+      transform: translateY(2px);
+      box-shadow: none;
+      outline: 1px solid #fbb040; }
+
+.appointment__radio--calendar:checked ~ .appointment__tabs .tabs__button--calendar {
+  background-color: #fbb040;
+  color: #262262; }
+
+.appointment__radio--reservation:checked ~ .appointment__tabs .tabs__button--reservation {
+  background-color: #fbb040;
+  color: #262262; }
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 50px 0; }
+  .cards__item {
+    display: none; }
+  .cards__title {
+    margin: 0 0 35px 0;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px; }
+  .cards__text {
+    margin: 0 0 30px 0;
+    line-height: 24px; }
+
+.appointment__radio--calendar:checked ~ .appointment__cards .cards__item--calendar {
+  display: block; }
+
+.appointment__radio--reservation:checked ~ .appointment__cards .cards__item--reservation {
+  display: block; }
+
+.reservation {
+  margin: 0 auto;
+  padding: 40px;
+  width: 90%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  transition: box-shadow 1.5s; }
+  .reservation:hover {
+    box-shadow: 0 10px 25px #262262; }
+  .reservation__inputs-group {
+    width: 45%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    transition: box-shadow 1.5s; }
+
+.inputs-group:hover {
+  box-shadow: 0 0 15px #262262; }
+
+.inputs-group--player-level {
+  background-color: #262262;
+  color: #fbb040;
+  border: none; }
+
+.inputs-group__title--player-level {
+  margin-bottom: 40px; }
+
+.inputs-group__radio--child:checked ~ .inputs-group__radio-indicator--child {
+  transition: 0.5s;
+  background-color: #fbb040;
+  color: #262262;
+  font-weight: 700;
+  box-shadow: inset 0 0 10px #262262; }
+
+.inputs-group__radio--beginner:checked ~ .inputs-group__radio-indicator--beginner {
+  transition: 0.5s;
+  background-color: #fbb040;
+  color: #262262;
+  font-weight: 700;
+  box-shadow: inset 0 0 10px #262262; }
+
+.inputs-group__radio--middle:checked ~ .inputs-group__radio-indicator--middle {
+  transition: 0.5s;
+  background-color: #fbb040;
+  color: #262262;
+  font-weight: 700;
+  box-shadow: inset 0 0 10px #262262; }
+
+.inputs-group__radio--professional:checked ~ .inputs-group__radio-indicator--professional {
+  transition: 0.5s;
+  background-color: #fbb040;
+  color: #262262;
+  font-weight: 700;
+  box-shadow: inset 0 0 10px #262262; }
+
+.inputs-group--training-data {
+  border: none; }
+
+.inputs-group__radio-indicator {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 10px 30px;
+  width: 300px;
+  height: 38px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: 1px solid #fbb040;
+  margin-bottom: 40px; }
+  .inputs-group__radio-indicator:hover {
+    cursor: pointer; }
+
+.inputs-group__text {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  box-sizing: border-box; }
+  .inputs-group__text--client-name {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none; }
+  .inputs-group__text--client-email {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none; }
+  .inputs-group__text--client-phone {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none; }
+  .inputs-group__text--date {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none; }
+  .inputs-group__text--client-message {
+    height: 100px;
+    resize: none; }

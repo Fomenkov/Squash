@@ -13,7 +13,7 @@
     <div class="content">
         <header class="header">
             <div class="header__wrapper padding-site">
-                <a href="#" class="logo header__logo">
+                <a href="index.html" class="logo header__logo">
                     <svg class="logo__img" preserveAspectRatio="xMidYMid meet" data-bbox="10.89 33 293.77 248.904"
                          viewBox="10.89 33 293.77 248.904" xmlns="http://www.w3.org/2000/svg" data-type="color"
                          role="img">
@@ -70,7 +70,7 @@
                 <nav class="site-navigation header__site-navigation">
                     <ul class="site-navigation__list">
                         <li class="site-navigation__item">
-                            <a class="site-navigation__link site-navigation__link--active">Главная</a>
+                            <a href="index.html" class="site-navigation__link">Главная</a>
                         </li>
                         <li class="site-navigation__item">
                             <a href="trainer.html" class="site-navigation__link">Тренер</a>
@@ -82,7 +82,7 @@
                             <a href="price.html" class="site-navigation__link">Прайс-лист</a>
                         </li>
                         <li class="site-navigation__item">
-                            <a href="appointment.html" class="site-navigation__link">Запись</a>
+                            <a class="site-navigation__link site-navigation__link--active">Запись</a>
                         </li>
                         <li class="site-navigation__item">
                             <a href="feedback.html" class="site-navigation__link">Обратная связь</a>
@@ -91,19 +91,81 @@
                 </nav>
             </div>
         </header>
-        <main class="main padding-site">
-            <h1 class="index__headline">Сквош, как часть тебя</h1>
-            <p>Пока не придумал, что тут будет...</p>
-            <p>Возможно, какие-то фотографии со ссылками на врутренние страницы сайта, или одна большая картинка...</p>
-                <!--<img class="index__img" src="img/collage.jpg" alt="Коллаж">-->
-            <!--<div class="test">-->
-                <!--<div class="test__box test__box&#45;&#45;1"></div>-->
-                <!--<div class="test__box test__box&#45;&#45;2"></div>-->
-                <!--<div class="test__box test__box&#45;&#45;3"></div>-->
-                <!--<div class="test__box test__box&#45;&#45;4"></div>-->
-                <!--<div class="test__box test__box&#45;&#45;center"></div>-->
+        <main class="main main--appointment-page padding-site">
+            <h1 class="page-title crawl-from-left">Расписание тренировок и запись</h1>
+            <section class="appointment main-index__services">
+                <!--<h2 class="appointment__title">Заголовок</h2>-->
+                <p class="appointment__description">Тут можно посмотреть календарь, выбрать свободное время и отправить
+                    заявку на его резервирование.<br>
+                    После этого тренер свяжется с вами для подтверждения.
+                </p>
+                <div class="appointment__wrapper">
+                    <input id="calendar" class="appointment__radio appointment__radio--calendar visually-hidden"
+                           type="radio" name="tab">
+                    <input id="reservation" class="appointment__radio appointment__radio--reservation visually-hidden"
+                           type="radio"
+                           name="tab">
+                    <div class="tabs appointment__tabs">
+                        <label for="calendar" tabindex="0" class="tabs__button tabs__button--calendar">Посмотреть
+                            календарь</label>
+                        <label for="reservation" tabindex="0"
+                               class="tabs__button tabs__button--reservation">Записаться</label>
+                    </div>
+                    <div class="cards appointment__cards">
+                        <div class="cards__item cards__item--calendar">
+                            <h3 class="cards__title">Календарь</h3>
+                            <p class="cards__text">
+                                В календаре отображается актуальная информация о свободных слотах для тренировок. Она
+                                обновляется в режиме реального времени.
+                            </p>
+                            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FMoscow&amp;src=NzY4cHZxY2hxNTVmaDA0MWhpbHYxYWcwaDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23C0CA33&amp;showTabs=1&amp;showCalendars=0&amp;showTz=0&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;mode=WEEK"
+                                    style="border-width:0" width="100%" height="600" frameborder="0"
+                                    scrolling="no"></iframe>
+                        </div>
+                        <div class="cards__item cards__item--reservation">
+                            <h3 class="cards__title">Заявка на тренировку</h3>
+                            <p class="cards__text">
+                                Поясняющий текст, например про то, что можно выбрать любую удобную площадку для
+                                тренировки и написать об этом в комментарии...
+                            </p>
+                            <form action="https://htmlacademy.ru/echo" class="reservation" method="post">
+                                <fieldset class="inputs-group inputs-group--player-level reservation__inputs-group">
+                                    <h2 class="inputs-group__title inputs-group__title--player-level">Выберите уровень игрока:</h2>
+                                    <input class="inputs-group__radio inputs-group__radio--child visually-hidden" type="radio"
+                                           name="player-level" id="child" value="child">
+                                    <input class="inputs-group__radio inputs-group__radio--beginner visually-hidden" type="radio"
+                                           name="player-level" id="beginner" value="beginner" checked>
+                                    <input class="inputs-group__radio inputs-group__radio--middle visually-hidden" type="radio"
+                                           name="player-level" id="middle" value="middle">
+                                    <input class="inputs-group__radio inputs-group__radio--professional visually-hidden" type="radio"
+                                           name="player-level" id="professional" value="professional">
+                                    <label class="inputs-group__radio-indicator inputs-group__radio-indicator--child" for="child">Ребёнок</label>
+                                    <label class="inputs-group__radio-indicator inputs-group__radio-indicator--beginner" for="beginner">Начальный</label>
+                                    <label class="inputs-group__radio-indicator inputs-group__radio-indicator--middle" for="middle">Любитель</label>
+                                    <label class="inputs-group__radio-indicator inputs-group__radio-indicator--professional" for="professional">Профессионал</label>
+                                </fieldset>
+                                <fieldset class="inputs-group inputs-group--training-data reservation__inputs-group">
+                                    <h2 class="inputs-group__title">Данные тренировки:</h2>
+                                    <input class="inputs-group__text inputs-group__text--client-name" type="text"
+                                           placeholder="Ваше имя" name="client-name" required>
+                                    <!--<input class="inputs-group__text inputs-group__text&#45;&#45;client-email" type="email"-->
+                                           <!--placeholder="E-mail" name="client-email">-->
+                                    <input class="inputs-group__text inputs-group__text--client-phone" type="tel"
+                                           placeholder="Номер телефона" name="client-phone" required>
+                                    <input class="inputs-group__text inputs-group__text--date" type="date"
+                                           placeholder="Дата тренировки" name="training-date" required>
+                                    <textarea class="inputs-group__text inputs-group__text--client-message"
+                                              placeholder="Время начала, продолжительность, число игроков и любые другие подробности"
+                                              name="client-message" id="" rows="5"></textarea>
+                                    <button class="button button--reservation feedback__button" type="submit">Отправить
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <!--</div>-->
         </main>
     </div>
     <footer class="footer ">
@@ -226,6 +288,7 @@
 
         </div>
     </footer>
+
 </div>
 </body>
 </html>

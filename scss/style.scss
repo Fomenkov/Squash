@@ -5,6 +5,7 @@
   font-style: normal;
 
 }
+
 @font-face {
   font-family: 'comfortaa';
   src: url('../fonts/comfortaa-light-webfont.woff2') format('woff2');
@@ -12,6 +13,7 @@
   font-style: normal;
 
 }
+
 @font-face {
   font-family: 'comfortaa';
   src: url('../fonts/comfortaa-medium-webfont.woff2') format('woff2');
@@ -19,6 +21,7 @@
   font-style: normal;
 
 }
+
 @font-face {
   font-family: 'comfortaa';
   src: url('../fonts/comfortaa-regular-webfont.woff2') format('woff2');
@@ -26,6 +29,7 @@
   font-style: normal;
 
 }
+
 @font-face {
   font-family: 'comfortaa';
   src: url('../fonts/comfortaa-semibold-webfont.woff2') format('woff2');
@@ -33,6 +37,7 @@
   font-style: normal;
 
 }
+
 @font-face {
   font-family: 'comfortaa';
   src: url('../fonts/comfortaa-variablefont_wght-webfont.woff2') format('woff2');
@@ -87,6 +92,21 @@ $outline-test-color: red;
 // --- / animations --- //
 
 // --- global styles --- //
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 * {
   font-family: 'Comfortaa', Arial, cursive;
@@ -148,6 +168,7 @@ html, body {
     color: $logo-base-color;
     box-shadow: 0 2px 5px $button-shadow-color;
     transition: 0.7s;
+    cursor: pointer;
   }
   &:active {
     background-color: #ffffff;
@@ -163,6 +184,16 @@ html, body {
   &--map {
     border: none;
   }
+  &--calendar {
+    margin: 100px auto;
+    display: block;
+    width: 200px;
+    text-align: center;
+  }
+  &--reservation {
+    border: none;
+    width: 100%;
+  }
 }
 
 .crawl-from-left::after {
@@ -177,6 +208,7 @@ html, body {
 }
 
 // --- / global styles --- //
+// --- header --- //
 
 .header {
   width: 100%;
@@ -260,6 +292,10 @@ html, body {
   }
 }
 
+// --- / header --- //
+
+// --- index-page --- //
+
 .index {
   &__headline {
     font-size: 40px;
@@ -298,6 +334,8 @@ html, body {
     }
   }
 }
+
+// --- index-page --- //
 
 .footer {
   color: $footer-text-color;
@@ -591,6 +629,8 @@ html, body {
     margin: 15px 0;
     position: relative;
     min-height: 30px;
+    color: inherit;
+    text-decoration: none;
     &::before {
       content: "";
       display: block;
@@ -603,40 +643,36 @@ html, body {
       background-repeat: no-repeat;
     }
     &--address {
+      &__link {
+        color: inherit;
+        text-decoration: none;
+      }
       &::before {
         background-image: url("../img/icon-address.svg");
         background-size: 15px;
       }
     }
     &--phone-trainer {
-      color: inherit;
-      text-decoration: none;
       &::before {
         background-image: url("../img/icon-trainer.svg");
         background-size: 25px;
       }
     }
     &--phone-pass {
-      color: inherit;
-      text-decoration: none;
       &::before {
         background-image: url("../img/icon-pass.svg");
         background-size: 25px;
       }
     }
     &--email {
-      color: inherit;
       &::before {
         background-image: url("../img/icon-email.svg");
         background-size: 20px;
       }
     }
   }
-
   &__social-list {
-
   }
-
   &__write-us {
     width: 50%;
     height: 90%;
@@ -705,3 +741,243 @@ html, body {
 }
 
 // --- / feedback page --- //
+.calendar {
+  padding: 20px;
+}
+
+// --- / appointment-page --- //
+
+/* === services === */
+.appointment {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+  &__title {
+    margin: 0 0 30px 0;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  &__description {
+    line-height: 34px;
+    margin-bottom: 40px;
+  }
+  &__wrapper {
+  }
+  &__radio {
+    position: absolute;
+  }
+}
+
+/* === appointment__tabs ===*/
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  &__button {
+    padding: 10px 25px;
+    margin: 0 20px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    min-height: 38px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: $logo-base-color;
+    color: $logo-second-color;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: $logo-second-color;
+      color: $logo-base-color;
+      box-shadow: 0 2px 5px $button-shadow-color;
+      transition: 0.7s;
+    }
+    &:active {
+      background-color: #ffffff;
+      transform: translateY(2px);
+      box-shadow: none;
+      outline: 1px solid $logo-second-color;
+
+    }
+  }
+}
+
+.appointment__radio--calendar:checked ~ .appointment__tabs .tabs__button--calendar {
+  background-color: $logo-second-color;
+  color: $logo-base-color;
+}
+
+.appointment__radio--reservation:checked ~ .appointment__tabs .tabs__button--reservation {
+  background-color: $logo-second-color;
+  color: $logo-base-color;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 50px 0;
+  &__item {
+    display: none;
+    &--calendar {
+    }
+    &--reservation {
+    }
+  }
+  &__title {
+    margin: 0 0 35px 0;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+  }
+  &__text {
+    margin: 0 0 30px 0;
+    line-height: 24px;
+  }
+}
+
+
+.appointment__radio--calendar:checked ~ .appointment__cards .cards__item--calendar {
+  display: block;
+}
+
+.appointment__radio--reservation:checked ~ .appointment__cards .cards__item--reservation {
+  display: block;
+}
+
+.reservation {
+  margin: 0 auto;
+  padding: 40px;
+  width: 90%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  transition: box-shadow 1.5s;
+  &:hover {
+    box-shadow: 0 10px 25px $shadow-color;
+    //outline: 1px solid #eaeaea;
+  }
+  &__inputs-group {
+    width: 45%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+
+    transition: box-shadow 1.5s;
+
+
+  }
+
+}
+
+.inputs-group {
+  &:hover {
+    //background-color: white;
+    box-shadow: 0 0 15px $logo-base-color;
+  }
+  &--player-level {
+    background-color: $logo-base-color;
+    color: $logo-second-color;
+    border: none;
+  }
+  &__title {
+    &--player-level {
+      margin-bottom: 40px;
+    }
+  }
+  &__radio {
+    &--child {
+      &:checked ~ .inputs-group__radio-indicator--child {
+        transition: 0.5s;
+        background-color: $logo-second-color;
+        color: $logo-base-color;
+        font-weight: 700;
+        box-shadow: inset 0 0 10px $logo-base-color;
+      }
+    }
+    &--beginner {
+      &:checked ~ .inputs-group__radio-indicator--beginner {
+        transition: 0.5s;
+        background-color: $logo-second-color;
+        color: $logo-base-color;
+        font-weight: 700;
+        box-shadow: inset 0 0 10px $logo-base-color;
+      }
+    }
+    &--middle {
+      &:checked ~ .inputs-group__radio-indicator--middle {
+        transition: 0.5s;
+        background-color: $logo-second-color;
+        color: $logo-base-color;
+        font-weight: 700;
+        box-shadow: inset 0 0 10px $logo-base-color;
+      }
+    }
+    &--professional {
+      &:checked ~ .inputs-group__radio-indicator--professional {
+        transition: 0.5s;
+        background-color: $logo-second-color;
+        color: $logo-base-color;
+        font-weight: 700;
+        box-shadow: inset 0 0 10px $logo-base-color;
+      }
+    }
+  }
+  &--training-data {
+    //border-color: #eaeaea;
+    border: none;
+  }
+  &__radio-indicator {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 30px;
+    width: 300px;
+    height: 38px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: 1px solid $logo-second-color;
+    margin-bottom: 40px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__text {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    &--client-name {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      outline: none;
+    }
+    &--client-email {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      outline: none;
+    }
+    &--client-phone {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      outline: none;
+    }
+    &--date {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      outline: none;
+    }
+    &--client-message {
+      height: 100px;
+      resize: none;
+    }
+  }
+}
+// --- / appointment-page --- //
