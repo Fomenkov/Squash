@@ -49,11 +49,22 @@
 @import "normalize";
 
 // --- variables --- //
+// --- size --- //
 $site-width: 1200px;
 $padding-site: 80px;
+$padding-difference: 60px;
 
-$test-box-width: ($site-width - ($padding-site * 2)) * 0.425;
+$screen-sm: 576px;
+//$screen-sm-max: 767px;
+$screen-md: 768px;
+//$screen-md-max: 991px;
+$screen-lg: 992px;
+//$screen-lg-max: 1199px;
+$screen-xl: 1200px;
 
+//$test-box-width: ($site-width - ($padding-site * 2)) * 0.425;
+
+// --- / size --- //
 // --- color -- //
 $logo-base-color: #262262;
 $logo-second-color: #fbb040;
@@ -180,6 +191,7 @@ html, body {
   &--feedback {
     border: none;
     margin-right: 20px;
+    width: 100%;
   }
   &--map {
     border: none;
@@ -243,8 +255,6 @@ html, body {
 
 .site-navigation {
   width: 100%;
-  display: flex;
-  align-items: center;
   &__list {
     width: 100%;
     margin: 0;
@@ -255,6 +265,7 @@ html, body {
   }
   &__item {
     margin-right: 20px;
+    margin-bottom: 30px;
   }
   &__link {
     position: relative;
@@ -309,31 +320,31 @@ html, body {
   }
 }
 
-.test {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  &__box {
-    background-color: $logo-base-color;
-    width: $test-box-width;
-    height: $test-box-width;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    &--center {
-      box-sizing: border-box;
-      position: absolute;
-      top: $test-box-width / 2 + 10px;
-      left: $test-box-width * 2 / 3 - 5px;
-      background-color: $logo-second-color;
-      transform: rotate(45deg);
-      overflow: hidden;
-    }
-    &:not(&--center):hover {
-      background-color: #837ed2;
-    }
-  }
-}
+//.test {
+//  position: relative;
+//  display: flex;
+//  justify-content: center;
+//  flex-wrap: wrap;
+//  &__box {
+//    background-color: $logo-base-color;
+//    width: $test-box-width;
+//    height: $test-box-width;
+//    margin-bottom: 20px;
+//    margin-right: 20px;
+//    &--center {
+//      box-sizing: border-box;
+//      position: absolute;
+//      top: $test-box-width / 2 + 10px;
+//      left: $test-box-width * 2 / 3 - 5px;
+//      background-color: $logo-second-color;
+//      transform: rotate(45deg);
+//      overflow: hidden;
+//    }
+//    &:not(&--center):hover {
+//      background-color: #837ed2;
+//    }
+//  }
+//}
 
 // --- index-page --- //
 
@@ -355,7 +366,7 @@ html, body {
 
   }
   &__slogan-logo {
-    width: 500px;
+    width: 450px;
     height: auto;
   }
   &__contacts {
@@ -372,7 +383,7 @@ html, body {
     text-decoration: none;
   }
   &__sponsor-logo {
-    width: 250px;
+    width: 200px;
     height: auto;
   }
 }
@@ -458,13 +469,13 @@ html, body {
     &::after {
       color: #FFFFFF;
       content: "Акция";
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       width: 130px;
       height: 30px;
       display: flex;
       position: absolute;
-      top: 20px;
-      right: -30px;
+      top: 10px;
+      right: -40px;
       background-color: #ee3643;
       transform: rotate(45deg);
       justify-content: center;
@@ -512,8 +523,9 @@ html, body {
     color: $logo-base-color;
     font-size: 26px;
     font-weight: 700;
-    line-height: 20px;
+    line-height: 30px;
     text-align: center;
+    padding: 0 20px;
   }
   &__comment {
     margin-bottom: 20px;
@@ -840,7 +852,6 @@ html, body {
   }
 }
 
-
 .appointment__radio--calendar:checked ~ .appointment__cards .cards__item--calendar {
   display: block;
 }
@@ -862,12 +873,11 @@ html, body {
     //outline: 1px solid #eaeaea;
   }
   &__inputs-group {
-    width: 45%;
+    width: 47%;
     padding: 20px 40px;
     box-sizing: border-box;
 
     transition: box-shadow 1.5s;
-
 
   }
 
@@ -934,7 +944,7 @@ html, body {
     display: flex;
     align-items: center;
     padding: 10px 20px 10px 30px;
-    width: 300px;
+    width: 100%;
     height: 38px;
     font-size: 16px;
     box-sizing: border-box;
@@ -980,4 +990,183 @@ html, body {
     }
   }
 }
+
 // --- / appointment-page --- //
+
+@media (min-width: $screen-xl) {
+
+}
+
+@media (max-width: $screen-xl - 1) and (min-width: $screen-lg) {
+  /* .padding-site {
+     padding-left: $padding-site - $padding-difference;
+     padding-right: $padding-site - $padding-difference;
+   }*/
+
+  .header {
+    &__logo {
+      margin-right: 50px;
+    }
+  }
+  .site-navigation {
+    &__list {
+      flex-wrap: wrap;
+    }
+  }
+
+  // --- trainer-page --- //
+  .trainer {
+    &__wrapper {
+      justify-content: space-around;
+      align-items: center;
+    }
+    &__info {
+      max-width: 450px;
+    }
+  }
+  // --- / trainer-page --- //
+
+  // --- services-page --- //
+  .service-card {
+    width: 390px;
+  }
+  // --- / services-page --- //
+
+  // --- appointment-page --- //
+  .reservation {
+    width: 100%;
+  }
+
+  .inputs-group {
+    &--player-level {
+    }
+  }
+  // --- / appointment-page --- //
+
+  // --- feedback-page --- //
+  .feedback {
+    width: 100%;
+    &__contacts-box {
+      min-width: 390px;
+    }
+  }
+
+  // --- / feedback-page --- //
+
+  // --- footer --- //
+  .footer {
+    &__slogan {
+      margin-right: 20px;
+    }
+    &__slogan-logo {
+      width: 400px;
+    }
+    &__sponsor-logo {
+      width: 150px;
+    }
+  }
+  // --- / footer --- //
+}
+
+@media (max-width: $screen-lg - 1) and (min-width: $screen-md) {
+   .padding-site {
+     padding-left: $padding-site - $padding-difference;
+     padding-right: $padding-site - $padding-difference;
+   }
+
+  .header {
+    &__logo {
+      margin-right: 50px;
+    }
+  }
+  .site-navigation {
+    &__list {
+      flex-wrap: wrap;
+    }
+    &__item {
+      min-width: 150px;
+    }
+  }
+
+  // --- trainer-page --- //
+  .trainer {
+    &__wrapper {
+      //justify-content: space-around;
+      //align-items: center;
+    }
+    &__photo {
+      margin-right: auto;
+      margin-bottom: 60px;
+      margin-left: auto;
+    }
+    &__info {
+      max-width: 100%;
+    }
+  }
+  // --- / trainer-page --- //
+
+  // --- appointment-page --- //
+  .reservation {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .inputs-group {
+    &--player-level {
+      //width: 300px;
+    }
+  }
+  // --- / appointment-page --- //
+
+  // --- feedback-page --- //
+  .feedback {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    &__contacts-box {
+      min-width: 350px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &__contact {
+      padding-left: 35px;
+    }
+    &__write-us {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  // --- / feedback-page --- //
+
+  // --- footer --- //
+  .footer {
+    &__wrapper {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    &__slogan {
+      margin-bottom: 40px;
+    }
+    &__slogan-logo {
+      //width: 400px;
+    }
+    &__sponsor-logo {
+      //width: 150px;
+    }
+    &__contacts {
+      //width: 100%;
+    }
+  }
+  // --- / footer --- //
+
+}
+
+@media (max-width: $screen-md - 1) and (min-width: $screen-sm) {
+
+}
+
+@media (max-width: $screen-sm - 1) {
+
+}

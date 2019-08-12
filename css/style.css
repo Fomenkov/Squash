@@ -396,7 +396,8 @@ html, body {
     outline: 1px solid #fbb040; }
   .button--feedback {
     border: none;
-    margin-right: 20px; }
+    margin-right: 20px;
+    width: 100%; }
   .button--map {
     border: none; }
   .button--calendar {
@@ -440,9 +441,7 @@ html, body {
     transition: 1s; }
 
 .site-navigation {
-  width: 100%;
-  display: flex;
-  align-items: center; }
+  width: 100%; }
   .site-navigation__list {
     width: 100%;
     margin: 0;
@@ -451,7 +450,8 @@ html, body {
     display: flex;
     justify-content: space-between; }
   .site-navigation__item {
-    margin-right: 20px; }
+    margin-right: 20px;
+    margin-bottom: 30px; }
   .site-navigation__link {
     position: relative;
     text-decoration: none;
@@ -492,28 +492,6 @@ html, body {
   display: block;
   max-width: 100%; }
 
-.test {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; }
-  .test__box {
-    background-color: #262262;
-    width: 442px;
-    height: 442px;
-    margin-bottom: 20px;
-    margin-right: 20px; }
-    .test__box--center {
-      box-sizing: border-box;
-      position: absolute;
-      top: 231px;
-      left: 289.66667px;
-      background-color: #fbb040;
-      transform: rotate(45deg);
-      overflow: hidden; }
-    .test__box:not(.test__box--center):hover {
-      background-color: #837ed2; }
-
 .footer {
   color: #ffffff;
   background-color: #262262;
@@ -528,7 +506,7 @@ html, body {
     justify-content: space-between;
     align-items: center; }
   .footer__slogan-logo {
-    width: 500px;
+    width: 450px;
     height: auto; }
   .footer__contacts {
     display: flex;
@@ -541,7 +519,7 @@ html, body {
     color: #ffffff;
     text-decoration: none; }
   .footer__sponsor-logo {
-    width: 250px;
+    width: 200px;
     height: auto; }
 
 .trainer__wrapper {
@@ -607,13 +585,13 @@ html, body {
   .service-card--action::after {
     color: #FFFFFF;
     content: "Акция";
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     width: 130px;
     height: 30px;
     display: flex;
     position: absolute;
-    top: 20px;
-    right: -30px;
+    top: 10px;
+    right: -40px;
     background-color: #ee3643;
     transform: rotate(45deg);
     justify-content: center;
@@ -647,8 +625,9 @@ html, body {
     color: #262262;
     font-size: 26px;
     font-weight: 700;
-    line-height: 20px;
-    text-align: center; }
+    line-height: 30px;
+    text-align: center;
+    padding: 0 20px; }
   .service-card__comment {
     margin-bottom: 20px;
     color: #a9a9a9;
@@ -895,7 +874,7 @@ html, body {
   .reservation:hover {
     box-shadow: 0 10px 25px #262262; }
   .reservation__inputs-group {
-    width: 45%;
+    width: 47%;
     padding: 20px 40px;
     box-sizing: border-box;
     transition: box-shadow 1.5s; }
@@ -946,7 +925,7 @@ html, body {
   display: flex;
   align-items: center;
   padding: 10px 20px 10px 30px;
-  width: 300px;
+  width: 100%;
   height: 38px;
   font-size: 16px;
   box-sizing: border-box;
@@ -984,3 +963,71 @@ html, body {
   .inputs-group__text--client-message {
     height: 100px;
     resize: none; }
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  /* .padding-site {
+     padding-left: $padding-site - $padding-difference;
+     padding-right: $padding-site - $padding-difference;
+   }*/
+  .header__logo {
+    margin-right: 50px; }
+  .site-navigation__list {
+    flex-wrap: wrap; }
+  .trainer__wrapper {
+    justify-content: space-around;
+    align-items: center; }
+  .trainer__info {
+    max-width: 450px; }
+  .service-card {
+    width: 390px; }
+  .reservation {
+    width: 100%; }
+  .feedback {
+    width: 100%; }
+    .feedback__contacts-box {
+      min-width: 390px; }
+  .footer__slogan {
+    margin-right: 20px; }
+  .footer__slogan-logo {
+    width: 400px; }
+  .footer__sponsor-logo {
+    width: 150px; } }
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .padding-site {
+    padding-left: 20px;
+    padding-right: 20px; }
+  .header__logo {
+    margin-right: 50px; }
+  .site-navigation__list {
+    flex-wrap: wrap; }
+  .site-navigation__item {
+    min-width: 150px; }
+  .trainer__photo {
+    margin-right: auto;
+    margin-bottom: 60px;
+    margin-left: auto; }
+  .trainer__info {
+    max-width: 100%; }
+  .reservation {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px; }
+  .feedback {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px; }
+    .feedback__contacts-box {
+      min-width: 350px;
+      padding-left: 20px;
+      padding-right: 20px; }
+    .feedback__contact {
+      padding-left: 35px; }
+    .feedback__write-us {
+      padding-left: 20px;
+      padding-right: 20px; }
+  .footer__wrapper {
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  .footer__slogan {
+    margin-bottom: 40px; } }
