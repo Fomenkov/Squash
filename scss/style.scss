@@ -497,7 +497,7 @@ html, body {
     z-index: 2;
     background-color: $logo-second-color;
     opacity: 0;
-    width: 440px;
+    width: 100%;
     height: 320px;
 
     &-title {
@@ -998,11 +998,6 @@ html, body {
 }
 
 @media (max-width: $screen-xl - 1) and (min-width: $screen-lg) {
-  /* .padding-site {
-     padding-left: $padding-site - $padding-difference;
-     padding-right: $padding-site - $padding-difference;
-   }*/
-
   .header {
     &__logo {
       margin-right: 50px;
@@ -1090,10 +1085,6 @@ html, body {
 
   // --- trainer-page --- //
   .trainer {
-    &__wrapper {
-      //justify-content: space-around;
-      //align-items: center;
-    }
     &__photo {
       margin-right: auto;
       margin-bottom: 60px;
@@ -1113,9 +1104,6 @@ html, body {
   }
 
   .inputs-group {
-    &--player-level {
-      //width: 300px;
-    }
   }
   // --- / appointment-page --- //
 
@@ -1149,24 +1137,226 @@ html, body {
     &__slogan {
       margin-bottom: 40px;
     }
-    &__slogan-logo {
-      //width: 400px;
-    }
-    &__sponsor-logo {
-      //width: 150px;
-    }
-    &__contacts {
-      //width: 100%;
-    }
   }
   // --- / footer --- //
 
 }
 
 @media (max-width: $screen-md - 1) and (min-width: $screen-sm) {
+  .padding-site {
+    padding-left: $padding-site - $padding-difference;
+    padding-right: $padding-site - $padding-difference;
+  }
 
+  // --- header --- //
+  .header {
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__logo {
+      margin-bottom: 50px;
+      margin-right: 0;
+    }
+  }
+  .site-navigation {
+    &__list {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    &__item {
+      min-width: 180px;
+    }
+  }
+  // --- / header --- //
+
+  // --- trainer-page --- //
+  .trainer {
+    &__photo {
+      margin-right: auto;
+      margin-bottom: 60px;
+      margin-left: auto;
+    }
+    &__info {
+      max-width: 100%;
+    }
+  }
+  // --- / trainer-page --- //
+
+  // --- price-page --- //
+  .price {
+    width: 100%;
+    &__cell {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  // --- / price-page --- //
+
+  // --- appointment-page --- //
+  .reservation {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .inputs-group {
+    width: 80%;
+    &--player-level {
+      margin-bottom: 40px;
+    }
+  }
+  // --- / appointment-page --- //
+
+  // --- feedback-page --- //
+  .feedback {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__contacts-box {
+      width: 80%;
+    }
+    &__write-us {
+      width: 80%;
+    }
+  }
+
+  // --- / feedback-page --- //
+
+  // --- footer --- //
+  .footer {
+    &__wrapper {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    &__slogan {
+      margin-bottom: 40px;
+      margin-right: 40px;
+    }
+  }
+  // --- / footer --- //
 }
 
 @media (max-width: $screen-sm - 1) {
+  .padding-site {
+    padding-left: $padding-site - $padding-difference;
+    padding-right: $padding-site - $padding-difference;
+  }
 
+  // --- header --- //
+  .header {
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__logo {
+      margin-bottom: 50px;
+      margin-right: 0;
+    }
+  }
+  .site-navigation {
+    &__list {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    &__item {
+      min-width: 180px;
+      margin-right: 0;
+    }
+  }
+  // --- / header --- //
+
+  // --- trainer-page --- //
+  .trainer {
+    &__wrapper {
+    }
+    &__photo {
+      margin-right: auto;
+      margin-bottom: 60px;
+      margin-left: auto;
+      &:hover {
+        transform: none;
+      }
+    }
+    &__info {
+      max-width: 100%;
+    }
+  }
+  // --- / trainer-page --- //
+
+  // --- price-page --- //
+  .price {
+    width: 100%;
+    &__cell {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  // --- / price-page --- //
+
+  // --- appointment-page --- //
+  .tabs {
+    flex-wrap: wrap;
+    &__button {
+      margin-bottom: 20px;
+      width: 300px;
+      justify-content: center;
+    }
+  }
+
+  .reservation {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .inputs-group {
+    width: 80%;
+    &:hover {
+      box-shadow: none;
+    }
+    &--player-level {
+      margin-bottom: 40px;
+    }
+  }
+  // --- / appointment-page --- //
+
+  // --- feedback-page --- //
+  .feedback {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    &__contacts-box {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &__write-us {
+      width: 100%;
+    }
+  }
+
+  // --- / feedback-page --- //
+
+  // --- footer --- //
+  .footer {
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__slogan {
+      margin-bottom: 40px;
+    }
+    &__slogan-logo {
+      width: 100%;
+    }
+    &__sponsor {
+      margin-bottom: 40px;
+    }
+    &__sponsor-logo {
+      width: 100%;
+    }
+    &__contacts {
+    }
+  }
+  // --- / footer --- //
 }
