@@ -447,8 +447,14 @@ html, body {
     margin: 0;
     padding: 0;
     list-style: none;
+    justify-content: space-between;
     display: flex;
-    justify-content: space-between; }
+    /*&--show {
+      position: absolute;
+      display: flex;
+      z-index: 1;
+      background-color: white;
+    }*/ }
   .site-navigation__item {
     margin-right: 20px;
     margin-bottom: 30px; }
@@ -481,6 +487,62 @@ html, body {
       height: 5px;
       display: block;
       background-color: #fbb040; }
+
+.hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  display: none; }
+  .hamburger__box {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 30px;
+    height: 30px;
+    position: relative; }
+  .hamburger__line {
+    padding: 0;
+    width: 30px;
+    height: 4px;
+    background-color: #262262;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out, transform 0.4s ease-in-out 0.4s;
+    position: absolute; }
+    .hamburger__line--1 {
+      top: 0; }
+    .hamburger__line--2 {
+      top: 13.5px;
+      width: 1px;
+      transform: rotate(90deg);
+      left: 13.5px; }
+    .hamburger__line--3 {
+      top: 13.5px;
+      width: 1px;
+      left: 13.5px; }
+    .hamburger__line--4 {
+      top: 13.5px; }
+    .hamburger__line--5 {
+      bottom: 0; }
+  .hamburger__checkbox:checked + .hamburger__wrap .hamburger__box > .hamburger__line--1 {
+    top: 13.5px;
+    background-color: transparent; }
+  .hamburger__checkbox:checked + .hamburger__wrap .hamburger__box > .hamburger__line--2 {
+    left: 0;
+    width: 30px;
+    transform: rotate(45deg);
+    background-color: #fbb040; }
+  .hamburger__checkbox:checked + .hamburger__wrap .hamburger__box > .hamburger__line--3 {
+    left: 0;
+    width: 30px;
+    transform: rotate(-45deg);
+    background-color: #fbb040; }
+  .hamburger__checkbox:checked + .hamburger__wrap .hamburger__box > .hamburger__line--4 {
+    background-color: transparent; }
+  .hamburger__checkbox:checked + .hamburger__wrap .hamburger__box > .hamburger__line--5 {
+    bottom: 13.5px;
+    background-color: transparent; }
 
 .index__headline {
   font-size: 40px;
@@ -1085,9 +1147,17 @@ html, body {
   .header__logo {
     margin-bottom: 50px;
     margin-right: 0; }
+  .site-navigation__hamburger {
+    display: flex; }
   .site-navigation__list {
     flex-wrap: wrap;
-    justify-content: space-around; }
+    justify-content: space-around;
+    display: none; }
+    .site-navigation__list--show {
+      position: absolute;
+      display: flex;
+      z-index: 1;
+      background-color: white; }
   .site-navigation__item {
     min-width: 180px;
     margin-right: 0; }
@@ -1120,6 +1190,8 @@ html, body {
       box-shadow: none; }
     .inputs-group--player-level {
       margin-bottom: 40px; }
+  iframe .wk-dayname {
+    white-space: normal; }
   .feedback {
     width: 100%;
     flex-wrap: wrap;
