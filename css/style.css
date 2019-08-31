@@ -559,7 +559,7 @@ html, body {
   background-color: #262262;
   font-size: 14px;
   padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-bottom: 10px; }
   .footer__wrapper {
     max-width: 1200px;
     box-sizing: border-box;
@@ -568,20 +568,24 @@ html, body {
     justify-content: space-between;
     align-items: center; }
   .footer__slogan-logo {
-    width: 450px;
+    width: 600px;
     height: auto; }
   .footer__contacts {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100px; }
+    height: 100px;
+    align-items: center; }
   .footer__club-name {
     font-weight: 700; }
   .footer__phone {
     color: #ffffff;
     text-decoration: none; }
+  .footer__sponsor-link {
+    display: block;
+    margin-bottom: 10px; }
   .footer__sponsor-logo {
-    width: 200px;
+    width: 100px;
     height: auto; }
 
 .trainer__wrapper {
@@ -1047,9 +1051,7 @@ html, body {
   .footer__slogan {
     margin-right: 20px; }
   .footer__slogan-logo {
-    width: 400px; }
-  .footer__sponsor-logo {
-    width: 150px; } }
+    width: 400px; } }
 
 @media (max-width: 991px) and (min-width: 768px) {
   .padding-site {
@@ -1084,11 +1086,17 @@ html, body {
     .feedback__write-us {
       padding-left: 20px;
       padding-right: 20px; }
+  .footer__sponsor {
+    display: flex; }
+    .footer__sponsor-link {
+      margin-right: 40px; }
   .footer__wrapper {
     flex-wrap: wrap;
-    justify-content: space-around; }
+    justify-content: center; }
   .footer__slogan {
-    margin-bottom: 40px; } }
+    margin-bottom: 40px;
+    width: 100%;
+    text-align: center; } }
 
 @media (max-width: 767px) and (min-width: 576px) {
   .padding-site {
@@ -1136,7 +1144,19 @@ html, body {
     justify-content: space-around; }
   .footer__slogan {
     margin-bottom: 40px;
-    margin-right: 40px; } }
+    margin-right: 0;
+    width: 100%;
+    text-align: center; }
+    .footer__slogan-logo {
+      width: 550px; }
+  .footer__sponsor {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px; }
+    .footer__sponsor-link {
+      margin-right: 40px; }
+  .footer__contacts {
+    letter-spacing: 2px; } }
 
 @media (max-width: 575px) {
   .padding-site {
@@ -1207,10 +1227,28 @@ html, body {
   .footer__wrapper {
     flex-direction: column; }
   .footer__slogan {
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    width: 100%; }
   .footer__slogan-logo {
     width: 100%; }
   .footer__sponsor {
-    margin-bottom: 40px; }
-  .footer__sponsor-logo {
-    width: 100%; } }
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap; }
+    .footer__sponsor-link {
+      margin-right: 20px; }
+  .footer__contacts {
+    letter-spacing: 1.5px; } }
+
+.developer {
+  padding-top: 10px;
+  border-top: 1px solid #fbb040;
+  margin-top: 20px;
+  text-align: center; }
+  .developer__title {
+    color: #fbb040; }
+  .developer__link {
+    color: white;
+    text-decoration: none; }
