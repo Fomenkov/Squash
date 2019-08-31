@@ -1049,6 +1049,57 @@ html, body {
 
 // --- / appointment-page --- //
 
+// --- news-page --- //
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__item {
+    //outline: 1px solid red;
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 45%;
+    &:hover {
+      box-shadow: 0 10px 25px #262262;
+      transition: 1s;
+      cursor: pointer;
+    }
+  }
+  &__title {
+    text-align: center;
+  }
+  &__image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  &__text {
+    margin-bottom: 40px;
+  }
+  &__button {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 200px;
+  }
+  &__time {
+    display: block;
+    margin-bottom: 10px;
+  }
+  &__author {
+    display: block;
+    margin-bottom: 10px;
+  }
+  &__category {
+    &-link {
+
+    }
+  }
+}
+
+// --- / news-page --- //
+
 @media (min-width: $screen-xl) {
 
 }
